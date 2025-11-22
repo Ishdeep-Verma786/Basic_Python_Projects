@@ -9,12 +9,14 @@ def game1():
             n = int(input('Enter the number of matches you want to play: '))
             if n <= 0 or n > 150:
                 print('Please give a valid input\n')
-                continue                                              
+                continue                        
+            else:
+                break                      
         except (ValueError, TypeError):
             print('Please give a valid input\n')
             continue
     i = 1
-    while True:
+    while i<=n:
         suffix = ['st' if i == 1 else 'nd' if i == 2 else 'rd' if i == 3 else 'th']
         print(f'Enter your {i}{suffix[0]} choice')
         comp = np.random.choice(['stone', 'paper', 'scissor'])
@@ -44,6 +46,7 @@ def game1():
 def game2():
     i = 1
     comp = np.random.randint(1, 150)
+    print('Please enter a number between 1 and 150.')
     while True:
         suffix = ['st' if i == 1 else 'nd' if i == 2 else 'rd' if i == 3 else 'th']
         print(f'Enter your {i}{suffix[0]} choice')
@@ -60,7 +63,7 @@ def game2():
             i += 1
         else:
             turn=['turn' if i==1 else 'turns']
-            print(f'Wow!\nYou guessed the right number in {i}{turn[0]}')
+            print(f'Wow!\nYou guessed the right number in {i} {turn[0]}')
             break
                   
 def start():
